@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Cover from '../components/cover.svelte';
+import Options from '../components/options.svelte';
+
+import content from '../date/content.json'
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<Cover
+			title={content.cover.title}
+			desc={content.cover.desc}
+		/>
+
+		<Options options={content.options} />
+	</main>
+</Layout>
+
+<style lang="less">
+	body {
+		margin: 0;
+	}
+
+	main {
+		margin: auto;
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+</style>
