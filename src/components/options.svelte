@@ -5,7 +5,7 @@
     }[];
 </script>
 
-<article id="options">
+<article id="options" class="options">
   {#each options as option}
     <h3>
       { option.title }
@@ -16,8 +16,8 @@
   {/each}
 </article>
 
-<style lang="less">
-  #options {
+<style>
+  .options {
     height: 100vh;
   }
 </style>

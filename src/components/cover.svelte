@@ -3,29 +3,29 @@
   export let desc: string;
 </script>
 
-<article id="cover">
-    <div>
-        <h1>
-            {title}
-        </h1>
-    </div>
-    <div>
-        <b>
-            {desc}
-        </b>
-    </div>
+<article id="cover" class="cover">
+  <div>
+    <h1 class="cover__title">
+      {title}
+    </h1>
+  </div>
+  <div>
+    <b>
+      {desc}
+    </b>
+  </div>
 </article>
 
-<style lang="less">
-    #cover {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
+<style>
+  .cover {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
 
-        & h1 {
-            margin: 0;
-        }
-    }
+  .cover__title {
+    margin: 0;
+  }
 </style>
