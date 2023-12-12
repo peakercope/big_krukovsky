@@ -7,17 +7,45 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "lint": "npm-run-all --parallel lint:astro lint:svelte lint:es lint:types",
+    "lint:astro": "astro check",
+    "lint:svelte": "pnpm svelte-check",
+    "lint:es": "eslint --ext .astro,.svelte,.js,.ts src",
+    "lint:types": "tsc --noEmit",
+    "prepare": "husky install"
   },
   "dependencies": {
-    "@astrojs/check": "^0.3.1",
     "@astrojs/svelte": "^5.0.0",
+    "@astrojs/ts-plugin": "^1.3.1",
     "astro": "^4.0.3",
-    "svelte": "^5.0.0-next.1",
-    "typescript": "^5.3.3"
+    "svelte": "^5.0.0-next.1"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.3.1",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.55.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^17.1.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-astro": "^0.30.0",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-svelte": "^2.35.1",
+    "husky": "^8.0.3",
     "less": "^4.2.0",
-    "svelte-preprocess": "^5.1.1"
+    "lint-staged": "^15.2.0",
+    "npm-run-all": "^4.1.5",
+    "postcss-csso": "^6.0.1",
+    "postcss-preset-env": "^9.3.0",
+    "svelte-check": "^3.6.2",
+    "svelte-preprocess": "^5.1.1",
+    "typescript": "^5.3.3"
+  },
+  "lint-staged": {
+    "*.{astro,svelte,js,ts}": "eslint --fix",
+    "*.{svelte}": "svelte-check"
   }
 }
